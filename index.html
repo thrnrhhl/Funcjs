@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <title>Func</title>
+    <style>
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+            height: 100%;
+        }
+        #root {
+            height: 100%;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            height: 100%;
+            text-align: center;
+        }
+        .bg-fon {
+            background-color: #042b3d;
+        }
+        .name {
+            font-size: 104px;
+            font-family: 'Noto Sans', sans-serif;
+            color: rgb(255 245 155);
+            text-shadow: 0px 0px 0.5rem rgb(229 213 69);
+            margin: 0;
+            font-weight: 00;
+        }
+        .article {
+            font-size: 14px;
+            font-family: 'Noto Sans', sans-serif;
+            color: #f4f5fa;
+            font-weight: 400;
+            margin: 0;
+        }
+        a.download {
+            margin-top: 20px;
+            font-size: 14px;
+            font-family: 'Noto Sans', sans-serif;
+            color: #647bec;
+            font-weight: 400;
+            
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        .return {
+            color: #ff6562;
+        }
+        .function {
+            color: #9a63cd;
+        }
+        .docs {
+            width: 1000px;
+            margin: auto;
+            height: 100%;
+            overflow: auto;
+        }
+        .docs__h1 {
+            font-family: 'Noto Sans', sans-serif;
+        }
+        .docs__link {
+            font-family: 'Noto Sans', sans-serif;
+            padding: 10px;
+            background-color: #f4f5fa;
+            border-radius: .5rem;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+        .docs__functions-description {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: 'Noto Sans', sans-serif;
+            font-size: 13px;
+        }
+        .docs__functions-description tr td{
+            border-bottom: 1px solid #dee2e6;
+            padding: 10px;
+        }    
+    </style>
+</head>
+
+<body>
+    <div id="root">
+        <div class="container bg-fon">
+                <h1 class="name">Func</h1>
+                <p class="article">Write JavaScript on functions</p>
+                <a href="d_Func.js" class="download" download>Download</a>
+        </div>
+        <div class="docs">
+            <h1 class="docs__h1">Docs</h1>
+            <div class="docs__link">use Link: </div>
+            <div class="docs__functions">
+                <table class="docs__functions-description">
+                    <tr>
+                        <td><span class="function">event</span>([ selector, event, function() ])</td>
+                        <td>
+                            <span class="return">return</span> 
+                            document.querySelector(selector).addEventListener( event, func(), false )
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="function">element</span>( selector )</td>
+                        <td>
+                            <span class="return">return</span> 
+                            document.querySelector( selector )
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="function">elements</span>( selector )</td>
+                        <td>
+                            <span class="return">return</span> 
+                            document.querySelectorAll(selector)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="function">value</span>( selector )</td>
+                        <td>
+                            <span class="return">return</span> 
+                            document.querySelector(selector).value
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="function">data</span>([ type, selector, index ])</td>
+                        <td>
+                            switch (type) {<br>
+                                case 'get':<br>
+                                <span class="return">return</span> document.querySelector(selector).getAttribute(`data-${index}`);<br>
+                                case 'set':<br>
+                                <span class="return">return</span>  document.querySelector(selector).setAttribute(`data-${index}`);<br>
+                                default:<br>
+                                <span class="return">return</span>  document.querySelector(selector).getAttribute(`data-${index}`);<br>
+                            }
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="function">innerText</span>([ selector, text ])</td>
+                        <td>
+                            <span class="return">return</span> 
+                            document.querySelector(selector).textContent = text;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="function">insertText</span>( selector )</td>
+                        <td>
+                            <span class="return">return</span> 
+                            document.querySelector(selector).textContent;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="function">elementsLength</span>( selector )</td>
+                        <td>
+                            <span class="return">return</span> 
+                            document.querySelectorAll(selector).length;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="function">valueLength</span>( selector )</td>
+                        <td>
+                            <span class="return">return</span> 
+                            document.querySelectorAll(selector).value.length;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="function">local</span>([ type, name, data ])</td>
+                        <td>
+                            
+                            switch (type) {<br>
+                                case 'set':<br>
+                                <span class="return">return</span>  localStorage.setItem(name, data);<br>
+                                case 'get':<br>
+                                <span class="return">return</span>  localStorage.getItem(name);<br>
+                                default: <br>
+                                <span class="return">return</span>  localStorage.setItem(name, data);<br>
+                            }
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="function">urlParam</span>( parameter )</td>
+                        <td>
+                            <span class="return">return</span> 
+                            return new Url().searchParams.get(parameter);
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="function">json</span>( type, data )</td>
+                        <td>
+                            
+                            switch(type) { <br>
+                                case 'pack':<br>
+                                <span class="return">return</span>  JSON.stringify(prop);<br>
+                                case 'unpack':<br>
+                                <span class="return">return</span>  JSON.parse(prop);   <br>
+                                default:<br>
+                                <span class="return">return</span>  JSON.stringify(prop);<br>
+                            }
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="function">curDateTime</span>( props )</td>
+                        <td>
+                            
+                            switch (props) {<br>
+                                case 'db':<br>
+                                <span class="return">return</span>  `year-month-dayThour:minutes`<br>
+                                case '/':<br>
+                                <span class="return">return</span>  `day/month/year hour:minutes`<br>
+                                case 'standart':<br>
+                                <span class="return">return</span>  `day month year hour:minutes`<br>
+                                case '.': <br>
+                                <span class="return">return</span>  `day.month.year hour:minutes`<br>
+                                default:<br>
+                                <span class="return">return</span>  `day.month.year hour:minutes`<br>
+                              }
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="function">tRowLen</span>( selector )</td>
+                        <td>
+                            <span class="return">return</span> 
+                            return document.querySelector(selector).rows.length;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="function">tBodyLen</span>( selector )</td>
+                        <td>
+                            <span class="return">return</span> 
+                            return document.querySelector(selector).rows.length - 1;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="function">forEach</span>([ selector, func ])</td>
+                        <td>
+                            <span class="return">return</span> 
+                            document.querySelectorAll(selector).forEach(func);
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="function">getAttr</span>([ selector, attributes ])</td>
+                        <td>
+                            <span class="return">return</span> 
+                            return document.querySelector(selector).getAttribute(attributes);
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="function">setAttr</span>([ selector, nameAttibute, attributes ])</td>
+                        <td>
+                            <span class="return">return</span> 
+                            return document.querySelector(selector).setAttribute(nameAttibute, attributes);
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="func.js" type='text/javascript'></script>
+    <script type="text/javascript">
+        let func = new Func();
+    </script>
+</body>
+
+</html>
